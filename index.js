@@ -29,7 +29,7 @@ exports.onMatchCreated = onDocumentCreated(
   async (event) => {
     const match = event.data.data();
     const { lostId, foundId, score, recommendation } = match;
-
+  
     try {
       const [lostDoc, foundDoc] = await Promise.all([
         db.collection("lost_items").doc(lostId).get(),
@@ -81,7 +81,7 @@ exports.onMatchCreated = onDocumentCreated(
             ${recommendation ? `<div style="font-size:0.85rem;color:#a09ec0;margin-bottom:20px;padding:12px;background:#1c1c2a;border-radius:8px"><strong style="color:#f0eff8">AI says:</strong> ${recommendation}</div>` : ""}
 
             <div style="text-align:center">
-              <a href="https://YOUR-PROJECT.web.app"
+              <a href="https://krishakohli001.github.io/findit/"
                  style="display:inline-block;background:#f59e0b;color:#080810;font-weight:700;font-size:0.9rem;
                         padding:12px 28px;border-radius:10px;text-decoration:none">
                 View on FindIt →
